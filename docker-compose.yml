@@ -12,4 +12,9 @@ services:
       - .:/app:ro
     depends_on:
       - mongo
+      - Redis
+  Redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
     
