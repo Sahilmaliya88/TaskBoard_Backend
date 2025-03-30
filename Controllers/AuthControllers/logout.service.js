@@ -6,13 +6,13 @@ module.exports = logoutHandler = async(request,response)=>{
                 throw err
             }
             response.clearCookie("connect.sid")
-            response.json({
+            response.status(200).json({
                 status:200,
                 message:"user loggedout successfully"
             })
         })
     }catch(err){
-        response.json({
+        response.status(500).json({
             status:400,
             message:err.message
         })

@@ -3,7 +3,7 @@ module.exports = VerifyUser = async(request,response) => {
     try {
         let user = request.session.user
         if(user){
-            response.json({
+            response.status(200).json({
                 status:200,
                 user
             })
@@ -11,8 +11,7 @@ module.exports = VerifyUser = async(request,response) => {
             throw new Error("please Login")
         }
     } catch (error) {
-        response.json({
-            status:401,
+        response.status(401).json({
             message:error.message
         })
     }

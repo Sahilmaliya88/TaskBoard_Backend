@@ -49,8 +49,8 @@ app.use((req,res,next)=>{
   next()
 })
 // server
-app.get("/", (_request, response) => {
-  response.send("<h1>Hello from Sahil</h1>");
+app.get("/", (request, response) => {
+  response.send(`<h1>Hello from ${request.session.user.username}</h1>`);
 });
 
 // routers
