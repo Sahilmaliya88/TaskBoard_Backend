@@ -50,7 +50,7 @@ app.use((req,res,next)=>{
 })
 // server
 app.get("/", (request, response) => {
-  response.send(`<h1>Hello from ${request.session.user.username}</h1>`);
+  response.send("hello from sahil")
 });
 
 // routers
