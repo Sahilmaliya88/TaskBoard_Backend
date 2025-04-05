@@ -1,4 +1,3 @@
-const { request, response } = require("express");
 const User = require("../../Models/user.modal");
 const Email = require("../../utils/Mail.Service")
 const crypto = require("crypto");

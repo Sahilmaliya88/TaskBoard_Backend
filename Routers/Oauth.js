@@ -42,7 +42,10 @@ passport.deserializeUser(function(user,done){
 OauthRouter.get("/google",passport.authenticate("google",{scope:["profile","email"]}))
 OauthRouter.get("/google/callback",passport.authenticate("google",{failureRedirect:"/login"}),function(request,resposne){
     request.session.user = request.user;
-    resposne.redirect("/")
+    resposne.status(200).json({
+      status:"success",
+      user:request.user
+    })
 })
 
 module.exports = OauthRouter
